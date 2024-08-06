@@ -8,7 +8,7 @@ pwd_i = 0
 st = 1
 nd = 2
 def randomize():
-    ran_number = random.randrange(3,20)
+    ran_number = random.randrange(3,21)
     return ran_number
 
 ran_number = randomize()
