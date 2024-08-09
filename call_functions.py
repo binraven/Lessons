@@ -3,12 +3,12 @@
 def send_email(message, recipient, *, sender  = "university.help@gmail.com"):
     if recipient == sender:
         return print("Нельзя отправить письмо самому себе!")
-    if ("@" in sender):
-        if (".com" in sender) or (".ru" in sender) or (".net" in sender):
+    if ("@" in sender) and ("@" in recipient):
+        if (".com" in sender and recipient) or (".ru" in sender and recipient) or (".net" in sender and recipient):
             if sender == "university.help@gmail.com":
                 print(f"Письмо успешно отправлено с адреса {sender} на адрес {recipient}.\n")
             else:
-                print("НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.\n")
+                print(f"НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.\n")
         else:
             print(f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}.\n")
     else:
