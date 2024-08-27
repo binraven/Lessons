@@ -1,3 +1,4 @@
+#"Пространство имен." модуль 4_2
 def test_function(*args):
     def inner_function (*args):
         print("Я в области видимости функции test_function")
