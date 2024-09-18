@@ -10,13 +10,12 @@
 def custom_write(file_name, strings):
     file = open(file_name, "w", encoding="utf-8")
     str_number = 1
-    strings_positions = []
+    strings_positions = {}
     for i in strings:
-        strings_positions.append([(str_number, file.tell()), i])
+        strings_positions[(str_number, file.tell())] = i
         file.write(f"{i}\n")
         str_number += 1
     file.close()
-    strings_positions = dict(strings_positions)
     return strings_positions
 
 info = [
