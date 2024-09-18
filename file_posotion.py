@@ -8,10 +8,10 @@
 
 
 def custom_write(file_name, strings):
-    file = open("file_position.txt", "w", encoding="utf-8")
+    file = open(file_name, "w", encoding="utf-8")
     str_number = 1
     strings_positions = []
-    for i in info:
+    for i in strings:
         strings_positions.append([(str_number, file.tell()), i])
         file.write(f"{i}\n")
         str_number += 1
@@ -29,4 +29,4 @@ info = [
 
 result = custom_write('test.txt', info)
 for elem in result.items():
-  print(elem)
+  print (elem)
