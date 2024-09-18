@@ -25,16 +25,7 @@ class Shop:
                 file.write(f"{str(i)}\n" )
                 file.close()
 
-
-
-        #
-        # str_write = ", ".join(map(str, products))
-        # if products[0] in file_product:
-        #     print(f"Продукт {str_write} уже есть в магазине")
-        # else:
-        #     file = open(self.__file_name, "a")
-        #     file.write(f"{str_write}\n" )
-        #     file.close()
+    
 class Product (Shop):
     def __init__(self, name, weight, category):
         self.name = name
