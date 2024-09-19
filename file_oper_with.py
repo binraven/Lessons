@@ -7,7 +7,6 @@
 """
 exclude = [',', '.', '=', '!', '?', ';', ':', ' - ','\n']
 get_all_words = {}
-find_word = "TexT"
 find_dict = {}
 count_dict = {}
 
