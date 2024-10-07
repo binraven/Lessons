@@ -110,6 +110,9 @@ class Cube(Figure):
                     self.__sides.append(sides[0])
                 return self.__sides
             else:
+                self.__sides = []
+                for i in range(self.sides_count):
+                    self.__sides.append(1)
                 return self.__sides
         else:
             if len(new_sides) == 1:
@@ -130,7 +133,7 @@ class Cube(Figure):
 
 
 circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)
-print(circle1.get_color())
+print(circle1.get_sides())
 cube1 = Cube((222, 35, 130), 6)
 
 # Проверка на изменение цветов:
