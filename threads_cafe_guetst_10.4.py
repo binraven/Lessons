@@ -18,7 +18,7 @@ class Guest(Thread):
 
     def run(self):
         pause = randint(3, 11)
-        sleep(pause)
+        sleep(0.001)
 
 
 class Cafe():
@@ -45,7 +45,7 @@ class Cafe():
     def discuss_guests(self):
         empty_tables = []
         empty_tables = [table for table in self.tables if table.guest == None]
-        while not self.queue.empty() and len(empty_tables) != 0:
+        while not self.queue.empty() or len(empty_tables) != 0:
             empty_tables = [table for table in self.tables if table.guest == None]
             for table in self.tables:
                 if table.guest and not table.guest.is_alive():
