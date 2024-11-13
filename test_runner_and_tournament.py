@@ -16,10 +16,12 @@ class TournamentTest(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         temp_dic = {}
-        for x in cls.all_results:
-            for key, value in cls.all_results[x].items():
-                temp_dic[key] = value.name
+        for x, y in cls.all_results.items():
+            for key in y:
+                temp_dic[key] = y[key].name
             print(temp_dic)
+
+
 
     def test_tournament1(self):
         t1 = runner_and_tournament.Tournament(90, self.runner1, self.runner3)
