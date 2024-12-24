@@ -23,11 +23,18 @@ async def create_user(user: User,
                       username: Annotated[
                           str, Path(min_length=5, max_length=20, description="Enter username", example="UrbanUser")],
                       age: Annotated[int, Path(ge=18, le=120, description="Enter age'", example="24")]) -> str:
-    user.id = len(users) + 1
-    user.username = username
-    user.age = age
-    users.append(user)
-    return f"User {user.id} is registered"
+    if len(users) == 0:
+        user.id = 1
+        user.username = username
+        user.age = age
+        users.append(user)
+        return f"User {user.id} is registered"
+    else:
+        user.id = users[-1].id + 1
+        user.username = username
+        user.age = age
+        users.append(user)
+        return f"User {user.id} is registered"
 
 @app.put("/user/{user_id}/{username}/{age}")
 async def update_user(
